@@ -9,8 +9,8 @@ import os
 from os.path import join as pjoin
 import numpy as np
 import tifffile as tiff
-import rasterio
-from rasterio.windows import Window
+# import rasterio
+# from rasterio.windows import Window
 
 
 # from keras.callbacks import CSVLogger
