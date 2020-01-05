@@ -198,11 +198,12 @@ if __name__ == '__main__':
                                      window=tile_window)
 
             # Convert the values into float
-            print(type(img))
             img = img.astype('float')
-            print(type(img))
-            
+
             if np.max(img) <= 0:
+                continue
+
+            if np.count_nonzero(img.ravel())/tile_size[0]*tile_size[1] <= 0.25:
                 continue
 
             img_out_path = pjoin(acc_out_path,
