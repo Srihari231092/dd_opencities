@@ -162,15 +162,54 @@ if __name__ == '__main__':
         os.mkdir(acc_out_path)
     scene_id = "665946"
     scene_dir_path = pjoin(acc_data_path, scene_id)
-    # scene_labels_path = pjoin(acc_data_path, scene_id + "-labels.tif")
     scene_path = pjoin(scene_dir_path, scene_id + ".tif")
 
-    # Read the
+    # Read the input image
     input_source = rasterio.open(scene_path)
-    # input_source_lbl = rasterio.open(scene_labels_path)
 
     print(input_source.width, input_source.height)
-    # print(input_source_lbl.width, input_source_lbl.height)
+
+    tiff_size = [input_source.profile.get("width"),
+                 input_source.profile.get("height")]
+
+    # List of overviews from biggest to smallest
+    oviews = input_source.overviews(1)
+
+    # Retrieve the smallest thumbnail
+    oview = oviews[-1]
+    print('Decimation factor= {}'.format(oview))
+
+    bands = (1, 2, 3, 4)
+    # Tile size
+    tile_size = (len(bands), 1024, 1024)
+
+    xx, yy = np.meshgrid(np.arange(0, tiff_size[0], tile_size[1]),
+                         np.arange(0, tiff_size[1], tile_size[2]),
+                         sparse=True)
+
+    for x in xx.ravel():
+        for y in yy.ravel():
+            x = int(min(x, tiff_size[0]))
+            y = int(min(y, tiff_size[1]))
+
+            img = np.empty(shape=tile_size).astype(input_source.profile['dtype'])
+            tile_window = Window(x, y, tile_size[0] * oview, tile_size[1] * oview)
+            tile = input_source.read(bands,
+                                     out=img,
+                                     window=tile_window)
+
+            # Convert the values into float
+            img = img.astype('f4')
+
+            if np.max(img) <= 0:
+                continue
+
+            img_out_path = pjoin(acc_out_path,
+                                 scene_id + "_" + str(x) + "_" + str(y) + ".tif")
+            tiff.imsave(img_out_path, data=img)
+
+            break
+
 
 
 
