@@ -9,8 +9,8 @@ import os
 from os.path import join as pjoin
 import numpy as np
 import tifffile as tiff
-# import rasterio
-# from rasterio.windows import Window
+import rasterio
+from rasterio.windows import Window
 
 
 # from keras.callbacks import CSVLogger
@@ -166,9 +166,11 @@ if __name__ == '__main__':
     scene_path = pjoin(scene_dir_path, scene_id + ".tif")
 
     # Read the
-    input_image = tiff.imread(scene_path)
-    input_label = tiff.imread(scene_labels_path)
+    input_source = rasterio.open(scene_path)
+    input_source_lbl = rasterio.open(scene_labels_path)
 
-    print(input_image.shape)
-    print(input_label.shape)
+    print(input_source.width, input_source.height)
+    print(input_source_lbl.width, input_source_lbl.height)
+
+    
 
