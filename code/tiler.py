@@ -162,15 +162,15 @@ if __name__ == '__main__':
         os.mkdir(acc_out_path)
     scene_id = "665946"
     scene_dir_path = pjoin(acc_data_path, scene_id)
-    scene_labels_path = pjoin(acc_data_path, scene_id + "-labels.tif")
+    # scene_labels_path = pjoin(acc_data_path, scene_id + "-labels.tif")
     scene_path = pjoin(scene_dir_path, scene_id + ".tif")
 
     # Read the
     input_source = rasterio.open(scene_path)
-    input_source_lbl = rasterio.open(scene_labels_path)
+    # input_source_lbl = rasterio.open(scene_labels_path)
 
     print(input_source.width, input_source.height)
-    print(input_source_lbl.width, input_source_lbl.height)
+    # print(input_source_lbl.width, input_source_lbl.height)
 
 
 
