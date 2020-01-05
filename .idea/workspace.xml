@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d32d0dd-d95c-4607-bf37-24df623d4223" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/tiler.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/tiler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/665946_0_29696.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/665946_0_30208.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/665946_0_30720.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/665946_0_31232.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/665946_0_32256.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/665946_0_35840.tif" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/tiler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="183" column="39" selection-start-line="183" selection-start-column="39" selection-end-line="183" selection-end-column="39" />
+            <state relative-caret-position="524">
+              <caret line="203" column="12" selection-start-line="203" selection-start-column="12" selection-end-line="203" selection-end-column="12" />
               <folding>
                 <element signature="e#56#69#0" expanded="true" />
               </folding>
@@ -121,8 +126,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/code/tiler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="183" column="39" selection-start-line="183" selection-start-column="39" selection-end-line="183" selection-end-column="39" />
+        <state relative-caret-position="524">
+          <caret line="203" column="12" selection-start-line="203" selection-start-column="12" selection-end-line="203" selection-end-column="12" />
           <folding>
             <element signature="e#56#69#0" expanded="true" />
           </folding>

@@ -152,7 +152,6 @@ from rasterio.windows import Window
 #
 
 
-
 if __name__ == '__main__':
 
     data_path = "/home/sriharis/scratch-midway2/train_tier_1/"
@@ -199,8 +198,10 @@ if __name__ == '__main__':
                                      window=tile_window)
 
             # Convert the values into float
-            img = img.astype('f4')
-
+            print(type(img))
+            img = img.astype('float')
+            print(type(img))
+            
             if np.max(img) <= 0:
                 continue
 
