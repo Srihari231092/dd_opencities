@@ -162,7 +162,7 @@ if __name__ == '__main__':
         os.mkdir(acc_out_path)
     scene_id = "665946"
     scene_dir_path = pjoin(acc_data_path, scene_id)
-    scene_labels_path = pjoin(acc_data_path, scene_id + "_labels")
+    scene_labels_path = pjoin(acc_data_path, scene_id + "_labels.tif")
     scene_path = pjoin(scene_dir_path, scene_id + ".tif")
 
     # Read the
@@ -172,5 +172,5 @@ if __name__ == '__main__':
     print(input_source.width, input_source.height)
     print(input_source_lbl.width, input_source_lbl.height)
 
-    
+
 
